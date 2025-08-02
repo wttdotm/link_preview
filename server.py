@@ -5,8 +5,8 @@ from PIL import Image, ImageDraw, ImageFont
 
 app = Flask(__name__)
 
-# Directory to save generated images
-ASSETS_DIR = os.path.join(os.path.dirname(__file__), 'assets')
+# Directory to save generated images (now under /tmp/assets)
+ASSETS_DIR = os.path.join('/tmp', 'assets')
 os.makedirs(ASSETS_DIR, exist_ok=True)
 
 start_timestamp = int(time.time())
@@ -64,4 +64,3 @@ def hello():
 
 if __name__ == '__main__':
     app.run(port=6969)
-
